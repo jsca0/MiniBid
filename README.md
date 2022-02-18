@@ -29,8 +29,6 @@ $ npm install
 ### Brief Description of MiniBid’s Database Models
 MiniBid uses five database models: ```User```, ```Item```, ```Auction```, ```Bid``` and ```Event```.
 
-IMAGE
-
 ```User``` defines a MiniBid user. User have a username, an email and a password (passwords are stored as hashes of actual passwords). 
 
 ```Item``` defines an item, created and owned by a ```User```.  When a user creates an item they provide it with a title, the item’s condition (‘new’ or ‘used’), a description, an initial starting price and an expiration date. When an item expires the ‘item status’ field will indicate whether or not the item sold.
@@ -40,6 +38,10 @@ IMAGE
 ```Bid``` defines a bid on an ```Item``` in an ```Auction```. Bids hold information on the bidding amount, the bidding ```User``` and the ```Bid``` they out bid. 
 
 ```Events``` are used by MiniBid to track the expiration of items. An ```Event``` contains and 'id' which references an ```Item``` and an experation time.
+
+IMAGE DIAGRAM
+
+```Auctions``` and ```Bids``` have an ```itemid``` field, this behaves as a key that can be used to find an Item's Auction and it's Bids within their respective database collections.
 ### MiniBid Application Logic Overview
 ### MiniBid RESTful API Endpoints
 Users should first register and login using the following endpoints:
