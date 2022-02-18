@@ -1,17 +1,13 @@
 # MiniBid
-## Setup, Installation and Project Structure
-### Project Structure
-
+## Setup and Installation 
 ### Node.js Libraries Used
 MiniBid uses: express nodemon mongoose body-parser dotenv joi bcryptjs jsonwebtoken
 ### Setup and Installation
-First set up a new collection in mongodb called 'MiniBid' and get the ????LINK????. Fill the link's \<password> and change 'myFisrtDatabase' to 'MiniBid'. This link will be used to connect the MiniBid application to the new mongoDB collection.
+First a new MongoDB Atlas collection should be set up. It should be called 'MiniBid' and get the ????LINK????. Fill the link's \<password> and change 'myFisrtDatabase' to 'MiniBid'. This link will be used to connect the MiniBid application to the new mongoDB collection.
 
-IMAGE
+Next there should be a ```.env``` file in MiniBid's root directory. The ```.env``` should have  a variable ```DB_CONNECTOR``` with the MongoDB link as its value. There should also be a variable ```TOKEN_SECRET``` set to a secret value, MiniBid will use this value when authenticating user tokens.
 
-Next make sure a ```.env``` file exists in MiniBid's root directory. In ```.env``` create a variable ```DB_CONNECTOR``` and give it the mongoDB link. Then create a variable ```TOKEN_SECRET``` and set it to a secret value, MiniBid will use this value when authenticating user tokens.
-  
-  To install and start MiniBid:
+To install and start MiniBid:
   
 1. Navigate to project folder and install dependencies with: 
 ```
