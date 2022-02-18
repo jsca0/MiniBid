@@ -108,7 +108,7 @@ def test_mary_can_add_item_with_token():
     res = requests.post(items_url, headers=mary_auth, json=marys_item)
     res_status = res.status_code
 
-    global marys_item_id #set marys item is for the next tests
+    global marys_item_id #set marys item id for the next tests
     marys_item_id = res.json()['_id']
 
     assert(res_status == 200)
