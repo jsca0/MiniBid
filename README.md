@@ -4,7 +4,7 @@
 ```
 $ npm install
 ```
-> This command will use the package.json file to automatically intall all of MiniBid's dependencies.
+> This command will use the package.json file to install all of MiniBid's dependencies.
 ## Enforcing authentication/verification functionalities
 ## Development of the MiniBid RESTful API
 ### Brief Description of MiniBid’s Database Models
