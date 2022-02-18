@@ -63,9 +63,6 @@ When an ```Auction``` is created its ```current_price``` field is set to the sta
 
 The accuracy of auctions is only to the minute; The winning bid will always be a bid placed within 60 seconds of the auction expiring, but this could mean, for example, a winner being a bid placed 30 seconds after the item had expired.
 
-> 4. Authorised users should be able to browse an item’s bidding history.
-
-If an item is sold MiniBid’s ‘bids’ database collection is searched for all the bids with a matching item id. These bids are returned to the user sorted by date.
 ### MiniBid RESTful API Endpoints
 Users should first register and login using the following endpoints:
 - /api/user
