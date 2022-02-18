@@ -3,7 +3,7 @@
 ### Node.js Libraries Used
 MiniBid uses: express nodemon mongoose body-parser dotenv joi bcryptjs jsonwebtoken
 ### Setup and Installation
-First a new MongoDB Atlas collection should be set up. It should be called 'MiniBid' and get the ????LINK????. Fill the link's \<password> and change 'myFisrtDatabase' to 'MiniBid'. This link will be used to connect the MiniBid application to the new mongoDB collection.
+First a new MongoDB Atlas collection should be set up. It should be called 'MiniBid' the connection link should be retrieved with the link's \<password> 'myFisrtDatabase' fields changed to the users password and 'MiniBid' respectively. This link will be used to connect the MiniBid application to the new mongoDB collection.
 
 Next there should be a ```.env``` file in MiniBid's root directory. The ```.env``` should have  a variable ```DB_CONNECTOR``` with the MongoDB link as its value. There should also be a variable ```TOKEN_SECRET``` set to a secret value, MiniBid will use this value when authenticating user tokens.
 
@@ -43,7 +43,7 @@ MiniBid was developed to meet these goals:
 
 > 1.  Users should be able to register a unique identity.
 
-All users are assigned a unique uer id when they are added to the 'users' database collection. A user proves their identity by logging in with a password which was set when the user registered their account. The password is stored as a hash in order to not expose user passwords. When a user logs in the password is checked against the stored hash. The user then recieves an ```auth_token``` which is used to uniquely indentify them on all future API calls.
+All users are assigned a unique user id when they are added to the 'users' database collection. A user proves their identity by logging in with a password which was set when the user registered their account. The password is stored as a hash in order to not expose user passwords. When a user logs in the password is checked against the stored hash. The user then recieves an ```auth_token``` which is used to uniquely indentify them on all future API calls.
 
 > 2. Authorised users should be able to post items for auction with a starting price and an end date. The item should not be sold after the end date and should not be sold for less than the starting price.
 
