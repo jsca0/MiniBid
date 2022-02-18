@@ -54,6 +54,8 @@ protocol.
 Item expiration is implemented by, on ```Item``` creation, submitting an ```Event``` referencing both the item’s id and it’s expiration date into MiniBids ‘events’ database collection. The database is instructed to delete this ```Event``` when the expiration time is reached. MiniBid listens for deletions happening in the ‘events’ collection. When an ```Event``` is deleted MiniBid retrieves the ```Item``` the deleted event was attached to. MiniBid also retrieves the item’s ```Auction```. If the auction has any bids then the ```Item``` is marked as ‘SOLD’ and the ```Auction``` is updated with the winners user id. Otherwise the ```Item``` marked as ‘EXPIRED’.
 
 > 3. Authorised users should be able to bid on an item, so long as it is not their own, has not expired and their bid is higher than the items current highest bid. When the item expires the user with the highest bid wins.
+
+The accuracy of auctions is only to the minute; The winning bid will always be a bid placed within 60 seconds of the auction expiring, but this could mean, for example, a winner being a bid placed 30 seconds after the item had expired.
 ### MiniBid RESTful API Endpoints
 Users should first register and login using the following endpoints:
 - /api/user
