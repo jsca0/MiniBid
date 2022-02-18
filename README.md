@@ -26,10 +26,23 @@ $ npm install
   Now MiniBid should be running on localhost port 3000. Clients can now send requests to MiniBid's API endpoints. 
 ## Enforcing authentication/verification functionalities
 ## Development of the MiniBid RESTful API
+MiniBid was developed to meet these goals:
+
+> 1.  Users should be able to register and access the API using the oAuth v2
+protocol. 
+
+
+> 2. Authorised users should be able to post items for auction with a starting price and an end date. The item should not be sold after the end date and should not be sold for less than the starting price.
+
+When a user posts an item, the user input is validated. The starting price is validated as a positive number with a precision of two decimal places; In order to ensure that the user submitted price can be converted into a valid currency. 
+
+The user supplied end date is validated as a date time in the future. The date should have the format ‘’
+
+Item expiration is implemented by, on Item creation, submitting an ```Event``` referencing both the item’s id and it’s expiration date into MiniBids ‘events’ database collection. The database is instructed to delete this event when the expiration time is reached. MiniBid listens for deletions happening in the ‘events’ collection. When an ```Event``` is deleted MiniBid retrieves the ```Item``` the deleted event was attached to. MiniBid also retrieves the item’s ```Auction```. If the auction has any bids then the ```Item``` is marked as ‘SOLD’ and the ```Auction``` is updated with the winners user id. Otherwise the ```Item``` marked as ‘EXPIRED’.
 ### Brief Description of MiniBid’s Database Models
 MiniBid uses five database models: ```User```, ```Item```, ```Auction```, ```Bid``` and ```Event```.
 
-- ```User``` defines a MiniBid user. User have a username, an email and a password (passwords are stored as hashes of actual passwords). 
+- ```User``` defines a MiniBid user. Users have a username, an email and a password (passwords are stored as hashes of actual passwords). 
 
 - ```Item``` defines an item, created and owned by a ```User```.  When a user creates an item they provide it with a title, the item’s condition (‘new’ or ‘used’), a description, an initial starting price and an expiration date. When an item expires the ‘item status’ field will indicate whether or not the item sold.
 
