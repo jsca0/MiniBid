@@ -43,8 +43,9 @@ Items...
 In order to bid on an ```Item``` a user should send a POST requsest containing the ```Bid``` to the following endpoint (where :itemId is the ```Item:_id```):
 - /api/bid/itemId
 > E.g. to send a bid
-  IMAGE
+IMAGE
 ## Development of the MiniBid testing cases
 Testing was done using testcases written in Python. The testcases used can be found in ```./test/test_cases.py```.
-  Running the tests with pytest gives:
-  IMAGE
+  Running the tests with pytest gives: 
+
+IMAGE
