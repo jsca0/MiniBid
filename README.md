@@ -51,6 +51,10 @@ protocol.
 
 > 2. Authorised users should be able to post items for auction with a starting price and an end date. The item should not be sold after the end date and should not be sold for less than the starting price.
 
+When a user posts an item, the user input is validated. The starting price is validated as a positive number with a precision of two decimal places; In order to ensure that the user submitted price can be converted into a valid currency. 
+
+The user supplied end date is validated as a date time in the future. The date should have ISO 8601 format.
+
 Item expiration is implemented by, on ```Item``` creation, submitting an ```Event``` referencing both the item’s id and it’s expiration date into MiniBids ‘events’ database collection. The database is instructed to delete this ```Event``` when the expiration time is reached. MiniBid listens for deletions happening in the ‘events’ collection. When an ```Event``` is deleted MiniBid retrieves the ```Item``` the deleted event was attached to. MiniBid also retrieves the item’s ```Auction```. If the auction has any bids then the ```Item``` is marked as ‘SOLD’ and the ```Auction``` is updated with the winners user id. Otherwise the ```Item``` marked as ‘EXPIRED’.
 
 > 3. Authorised users should be able to bid on an item, so long as it is not their own, has not expired and their bid is higher than the items current highest bid. When the item expires the user with the highest bid wins.
