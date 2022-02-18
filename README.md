@@ -1,6 +1,6 @@
 # MiniBid
 ## Setup, Installation and Project Structure
-First set up a new collection in mongodb called 'MiniBid' and get the ????LINK????. Fill the link's \<password>\ and change 'myFisrtDatabase' to 'MiniBid'. This link will be used to connect the MiniBid application to the new mongodb collection.  
+First set up a new collection in mongodb called 'MiniBid' and get the ????LINK????. Fill the link's \<password> and change 'myFisrtDatabase' to 'MiniBid'. This link will be used to connect the MiniBid application to the new mongodb collection.  
   IMAGE  
 Next make sure a ```.env``` file exists iin MiniBid's root directory. In ```.env``` create a variable ```DB_CONNECTOR``` and give it the mongodb link. Then create a variable ```TOKEN_SECRET``` and set it to a secret value, MiniBid will use this value when authenticating user tokens.  
   
