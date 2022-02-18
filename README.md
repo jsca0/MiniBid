@@ -30,5 +30,8 @@ MiniBid uses five database models: User, Item, Auction, Bid and Event.
   
 ### MiniBid Application Logic Overview
 ### MiniBid RESTful API Endpoints
+- /api/user
+  - /register
+  - /login 
 ## Development of the MiniBid testing cases
 
