@@ -38,7 +38,7 @@ MiniBid uses five database models: ```User```, ```Item```, ```Auction```, ```Bid
 
 - ```Bid``` defines a bid on an ```Item``` in an ```Auction```. Bids hold information on the bidding amount, the bidding ```User``` and the ```Bid``` they out bid. 
 
-- ```Events``` are used by MiniBid to track the expiration of items. An ```Event``` contains and 'id' which references an ```Item``` and an experation time.
+- ```Events``` are used by MiniBid to track the expiration of items. An ```Event``` contains a reference to an ```Item``` and an experation time.
 
 IMAGE DIAGRAM
 
