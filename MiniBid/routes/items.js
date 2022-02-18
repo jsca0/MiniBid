@@ -67,10 +67,14 @@ router.get('/:itemId', verifyToken, async(req,res) =>{
     }
 })
 
-//GET 3 (Read item bidding history)
+//GET 3 (Read sold item bidding history)
 router.get('/:itemId/history', verifyToken, async(req,res) =>{
     //try to find all bids with itemid and sort by date...
     try{
+        const getItemById = await Item.findById(req.params.itemId)
+        if (getItemById.item_status != 'SOLD') { 
+           return res.status(400).send({message:'Item must be sold'}) 
+        }
         const bidding_history = await Bid.find({itemid:req.params.itemId}).sort({date: -1})
         res.send(bidding_history) 
     }catch(err){
