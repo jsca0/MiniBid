@@ -59,7 +59,7 @@ Item expiration is implemented by, on ```Item``` creation, submitting an ```Even
 
 > 3. Authorised users should be able to bid on an item, so long as it is not their own, has not expired and their bid is higher than the items current highest bid. When the item expires the user with the highest bid wins.
 
-When an ```Auction``` is created its ```current_price``` field is set to the starting price of the item being sold. When a bid is made the ```current_price``` is updated to the bid amount. ```Bids``` are validated by ensuring they are higher than the auctions ```current_price```. 
+When an ```Auction``` is created its ```current_price``` field is set to the starting price of the item being sold. When a bid is made the ```current_price``` is updated to the bid amount. ```Bids``` are validated by ensuring they are higher than the auction's ```current_price```. 
 
 The accuracy of auctions is only to the minute; The winning bid will always be a bid placed within 60 seconds of the auction expiring, but this could mean, for example, a winner being a bid placed 30 seconds after the item had expired.
 ### MiniBid RESTful API Endpoints
