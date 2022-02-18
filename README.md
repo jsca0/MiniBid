@@ -40,7 +40,7 @@ Items...
   - /:itemId
   - /:itemId/auction 
 
-Bids...
+In order to bid on an ```Item``` a user should send a POST requsest containing the ```Bid``` to the following endpoint (where :itemId is the ```Item``` id):
 - /api/bid/itemId
 ## Development of the MiniBid testing cases
 
