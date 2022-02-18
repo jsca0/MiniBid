@@ -2,7 +2,7 @@
 ## Setup, Installation and Project Structure
 1.
 ```
-$ npm init
+$ npm install
 ```
 ## Enforcing authentication/verification functionalities
 ## Development of the MiniBid RESTful API
