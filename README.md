@@ -45,5 +45,5 @@ In order to bid on an ```Item``` a user should send a POST requsest containing t
 E.g. IMAGE
 ## Development of the MiniBid testing cases
 Testing was done using testcases written in Python. The testcases used can be found in ```./test/test_cases.py```.
-Running the tests with pytest gives: 
-IMAGE
+  Running the tests with pytest gives: 
+  IMAGE
