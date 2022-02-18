@@ -47,10 +47,17 @@ Users should first register and login using the following endpoints:
 Items...
 - /api/items
   - /:itemId
-  - /:itemId/auction 
+  - /:itemId/auction
+
+ITEMS IMAGE
+
+ITEM IMAGE
+
+AUCTION IMAGE
 
 In order to bid on an ```Item``` a user should send a POST requsest containing the ```Bid``` to the following endpoint (where :itemId is the ```Item:_id```):
 - /api/bid/itemId
+The requests ```auth_token``` should authourize any user <b>except</b> the user who created the ```Item```, i.e. Item owners cannot bid on their own items.
 > E.g. to send a bid
 
 IMAGE
