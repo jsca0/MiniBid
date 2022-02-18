@@ -21,7 +21,8 @@ $ npm install
   $ npm start
   ```
   > This will start MiniBid's server 
- Now MiniBid should be running on localhost port 3000. Clients can now send requests to MiniBid's API endpoints. 
+ Now MiniBid should be running on localhost port 3000. 
+ Clients can now send requests to MiniBid's API endpoints. 
 ## Enforcing authentication/verification functionalities
 ## Development of the MiniBid RESTful API
 ### Brief Description of MiniBid’s Database Models
