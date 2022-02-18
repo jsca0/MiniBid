@@ -47,7 +47,7 @@ MiniBid was developed to meet these goals:
 
 > 1.  Users should be able to register a unique identity.
 
-When a user registers an account they set a password. The password is stored as a hash in order to not expose user passwords. When a user logs in the password is checked against the stored hash. 
+All users are assigned a unique uer id when they are added to the 'users' database collection. A user proves their identity by logging in with a password which was set when the user registered their account. The password is stored as a hash in order to not expose user passwords. When a user logs in the password is checked against the stored hash. The user then recieves an ```auth_token``` which is used to uniquely indentify them on all future API calls.
 
 > 2. Authorised users should be able to post items for auction with a starting price and an end date. The item should not be sold after the end date and should not be sold for less than the starting price.
 
