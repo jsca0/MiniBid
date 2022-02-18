@@ -2,8 +2,6 @@
 ## Setup, Installation and Project Structure
 ### Project Structure
 
-![structure](/images/project_structure.png)
-  
 ### Node.js Libraries Used
 MiniBid uses: express nodemon mongoose body-parser dotenv joi bcryptjs jsonwebtoken
 ### Setup and Installation
@@ -79,4 +77,4 @@ Testing was done using testcases written in Python. The testcases used can be fo
 
 Running the tests with pytest: 
 
-IMAGE
+![test results](/images/test_results.png)
