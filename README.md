@@ -44,7 +44,7 @@ Users should first register and login using the following endpoints:
 
 <b>For every other endpoint requests must come from registered users, they should have the user's ```auth_token``` in thier headers.</b>
 
-To read all items, post an item to sell or read an item's auction, users should send requests to the following API endpoints:
+To read all items, post an item to sell or read an item's auction, users should send requests to the following API endpoints (where :itemId is the ```Item:_id```):
 - /api/items
   - /:itemId
   - /:itemId/auction
