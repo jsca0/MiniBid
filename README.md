@@ -27,10 +27,19 @@ $ npm install
 ## Enforcing authentication/verification functionalities
 ## Development of the MiniBid RESTful API
 ### Brief Description of MiniBid’s Database Models
-MiniBid uses five database models: User, Item, Auction, Bid and Event.
+MiniBid uses five database models: ```User```, ```Item```, ```Auction```, ```Bid``` and ```Event```.
 
 IMAGE
-  
+
+```User``` defines a MiniBid user. User have a username, an email and a password (passwords are stored as hashes of actual passwords). 
+
+```Item``` defines an item, created and owned by a ```User```.  When a user creates an item they provide it with a title, the item’s condition (‘new’ or ‘used’), a description, an initial starting price and an expiration date. When an item expires the ‘item status’ field will indicate whether or not the item sold.
+
+```Auction``` defines an auction on an ```Item```. ```Auctions``` contain the item they are auctioning, the current price of the item, the current highest bid and, once they expire, the winner (if there is one). Auctions do not contain information regarding the time left to complete. This is because it would be difficult to achieve a high degree of accuracy when the time remaining is calculated server-side and then sent back to a client in a http response. This could be done with a stateful connection between the client and the server, but MiniBid is a RESTful application and that would violate the stateless property RESTful software should have. It makes more sense for a client to obtain an Item’s expiration date via MiniBid’s API and then calculate the Auction’s time remaining client-side.
+
+```Bid``` defines a bid on an ```Item``` in an ```Auction```. Bids hold information on the bidding amount, the bidding ```User``` and the ```Bid``` they out bid. 
+
+```Events``` are used by MiniBid to track the expiration of items. An ```Event``` contains and 'id' which references an ```Item``` and an experation time.
 ### MiniBid Application Logic Overview
 ### MiniBid RESTful API Endpoints
 Users should first register and login using the following endpoints:
