@@ -47,7 +47,7 @@ MiniBid was developed to meet these goals:
 
 > 1.  Users should be able to register and login to an account. 
 
-When a user registers an account they set a password. The password is stored as a hash in order to not expose user passwords. When a user logs in teh password is checked against the stored hash. 
+When a user registers an account they set a password. The password is stored as a hash in order to not expose user passwords. When a user logs in the password is checked against the stored hash. 
 
 > 2. Authorised users should be able to post items for auction with a starting price and an end date. The item should not be sold after the end date and should not be sold for less than the starting price.
 
