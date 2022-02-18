@@ -37,6 +37,7 @@ MiniBid uses five database models: User, Item, Auction, Bid and Event.
   - /login 
 
 For every other endpoint requests must come from registered users, they should have the user's ```auth_token``` in thier headers.
+
 Items...
 - /api/items
   - /:itemId
