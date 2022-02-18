@@ -28,15 +28,21 @@ $ npm install
 ## Development of the MiniBid RESTful API
 ### Brief Description of MiniBid’s Database Models
 MiniBid uses five database models: User, Item, Auction, Bid and Event.
-  IMAGE
+
+IMAGE
   
 ### MiniBid Application Logic Overview
 ### MiniBid RESTful API Endpoints
+Users should first register and login using the following endpoints:
 - /api/user
   - /register
-  - /login 
+  - /login
+ 
+ IMAGE
+ 
+ IMAGE
 
-For every other endpoint requests must come from registered users, they should have the user's ```auth_token``` in thier headers.
+<b>For every other endpoint requests must come from registered users, they should have the user's ```auth_token``` in thier headers.</b>
 
 Items...
 - /api/items
