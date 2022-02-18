@@ -44,7 +44,7 @@ Users should first register and login using the following endpoints:
 
 <b>For every other endpoint requests must come from registered users, they should have the user's ```auth_token``` in thier headers.</b>
 
-To read all item, post an item to sell or read an item's auction, users should send requests to the following API endpoints:
+To read all items, post an item to sell or read an item's auction, users should send requests to the following API endpoints:
 - /api/items
   - /:itemId
   - /:itemId/auction
@@ -54,10 +54,11 @@ ITEMS IMAGE
 ITEM IMAGE
 
 AUCTION IMAGE
+> Users must GET an item's auction in order to get the current price the item is selling for and, once it expires, the winner's ```User:_id```.
 
 In order to bid on an item a user should send a POST requsest containing the ```Bid``` to the following endpoint (where :itemId is the ```Item:_id```):
 - /api/bid/:itemId
-> Bid requests should be sent with an ```auth_token``` which authorizes any user <b>except</b> the user who created the ```Item``` (i.e. Item owners cannot bid on their own items). 
+> Bid requests should be sent with an ```auth_token``` which authorizes any user <b>except</b> the user who created the ```Item``` (i.e. Users cannot bid on their own items). 
 
 BID IMAGE
 ## Testing
