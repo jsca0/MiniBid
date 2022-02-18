@@ -2,7 +2,7 @@
 ## Setup, Installation and Project Structure
 ### Project Structure
 
-![structure](/images/project_structure)
+![structure](/images/project_structure.png)
   
 ### Node.js Libraries Used
 MiniBid uses: express nodemon mongoose body-parser dotenv joi bcryptjs jsonwebtoken
