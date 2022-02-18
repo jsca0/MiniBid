@@ -26,17 +26,6 @@ $ npm install
   Now MiniBid should be running on localhost port 3000. Clients can now send requests to MiniBid's API endpoints. 
 ## Enforcing authentication/verification functionalities
 ## Development of the MiniBid RESTful API
-MiniBid was developed to meet these goals:
-
-> 1.  Users should be able to register and access the API using the oAuth v2
-protocol. 
-
-
-> 2. Authorised users should be able to post items for auction with a starting price and an end date. The item should not be sold after the end date and should not be sold for less than the starting price.
-
-Item expiration is implemented by, on ```Item``` creation, submitting an ```Event``` referencing both the item’s id and it’s expiration date into MiniBids ‘events’ database collection. The database is instructed to delete this ```Event``` when the expiration time is reached. MiniBid listens for deletions happening in the ‘events’ collection. When an ```Event``` is deleted MiniBid retrieves the ```Item``` the deleted event was attached to. MiniBid also retrieves the item’s ```Auction```. If the auction has any bids then the ```Item``` is marked as ‘SOLD’ and the ```Auction``` is updated with the winners user id. Otherwise the ```Item``` marked as ‘EXPIRED’.
-
-> 3. Authorised users should be able to bid on an item, so long as it is not their own, has not expired and their bid is higher than the items current highest bid. When the item expires the user with the highest bid wins.
 ### Brief Description of MiniBid’s Database Models
 MiniBid uses five database models: ```User```, ```Item```, ```Auction```, ```Bid``` and ```Event```.
 
@@ -54,6 +43,17 @@ IMAGE DIAGRAM
 
 ```Auctions``` and ```Bids``` have an ```itemid``` field, this behaves as a key that can be used to find an Item's Auction and it's Bids within their respective database collections.
 ### MiniBid Application Logic Overview
+MiniBid was developed to meet these goals:
+
+> 1.  Users should be able to register and access the API using the oAuth v2
+protocol. 
+
+
+> 2. Authorised users should be able to post items for auction with a starting price and an end date. The item should not be sold after the end date and should not be sold for less than the starting price.
+
+Item expiration is implemented by, on ```Item``` creation, submitting an ```Event``` referencing both the item’s id and it’s expiration date into MiniBids ‘events’ database collection. The database is instructed to delete this ```Event``` when the expiration time is reached. MiniBid listens for deletions happening in the ‘events’ collection. When an ```Event``` is deleted MiniBid retrieves the ```Item``` the deleted event was attached to. MiniBid also retrieves the item’s ```Auction```. If the auction has any bids then the ```Item``` is marked as ‘SOLD’ and the ```Auction``` is updated with the winners user id. Otherwise the ```Item``` marked as ‘EXPIRED’.
+
+> 3. Authorised users should be able to bid on an item, so long as it is not their own, has not expired and their bid is higher than the items current highest bid. When the item expires the user with the highest bid wins.
 ### MiniBid RESTful API Endpoints
 Users should first register and login using the following endpoints:
 - /api/user
