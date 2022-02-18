@@ -1,6 +1,7 @@
 # MiniBid
 ## Setup, Installation and Project Structure
-To setup and install MiniBid first make sure a ```.env``` file exists is the projects root directory, containing values for ```DB_CONNECTOR``` and ```TOKEN_SECRET```. MiniBid will use these values for connecting to the application’s database and authenticating user tokens.
+First set up a new collection in mongodb called 'MiniBid' and get the ????LINK????. Fill the links <password> and change 'myFisrtDatabase; to 'MiniBid;. This link will be used connect the MiniBid application to  ????database.
+To setup and install MiniBid first make sure a ```.env``` file exists is the projects root directory. In ```.env``` create a variable ```DB_CONNECTOR``` and give it the mongodb link. Next create a variable ```TOKEN_SECRET``` and set it to a secret value, MiniBid will use this for authenticating user tokens.
 
 1. Navigate to project folder and install dependencies with: 
 ```
