@@ -45,7 +45,7 @@ IMAGE DIAGRAM
 ### MiniBid Application Logic Overview
 MiniBid was developed to meet these goals:
 
-> 1.  Users should be able to register and login to an account. 
+> 1.  Users should be able to register a unique identity.
 
 When a user registers an account they set a password. The password is stored as a hash in order to not expose user passwords. When a user logs in the password is checked against the stored hash. 
 
