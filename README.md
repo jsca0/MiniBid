@@ -116,13 +116,17 @@ To read all items, post an item to sell or read an item's auction, users should 
 
 ITEMS IMAGE
 
-> To post and item for auction:  
+> To post and item for auction:
+
 ![post item](/images/post_item.png)
 
 <br/>
 
-> Users must GET an item's auction in order to get the current price the item is selling for. Once an item expires it expires, users can findthe winner's ```User:_id``` by getting the auction:  
+> Users must GET an item's auction in order to get the current price the item is selling for. Once an item expires it expires, users can findthe winner's ```User:_id``` by getting the auction:
+
 ![auction](/images/auction.png)
+
+<br/>
 
 In order to bid on an item a user should send a POST requsest containing the ```Bid``` to the following endpoint (where :itemId is the ```Item:_id```):
 - /api/bid/:itemId
