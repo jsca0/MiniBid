@@ -137,7 +137,7 @@ In order to bid on an item a user should send a POST requsest containing the ```
 - /api/bid/:itemId
 > Bid requests should be sent with an ```auth_token``` which authorizes any user <b>except</b> the user who created the ```Item``` (i.e. Users cannot bid on their own items). 
 
-BID IMAGE
+![bid](/images/bid.png)
 ## Testing
 Testing was done using testcases written in Python. The testcases used can be found in ```./test/test_cases.py```.
 
