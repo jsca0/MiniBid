@@ -5,10 +5,10 @@
 MiniBid
 │
 └─── models                 #database schemas
-└─── routes                 #
+└─── routes                 #api routes
 └─── validations            #validating user input
 └─── verifications          #authenticating users           
-└─── app.js                 #
+└─── app.js                 #main app file
 └─── .env                   #environment variables
 └─── node_modules           #dependencies
 └─── package-lock.json      #npm automatically generated document
@@ -16,14 +16,14 @@ MiniBid
 ```
 ### Node.js Libraries Used
 MiniBid uses: 
-- express, 
-- nodemon
-- mongoose
-- body-parser
-- dotenv
-- joi 
-- bcryptjs 
-- jsonwebtoken
+- express, for developing the server 
+- nodemon, to aid development
+- mongoose, for database communication
+- body-parser, for reading requests
+- dotenv, for reading environment variables
+- joi, for enforcing validation
+- bcryptjs, for password hashing
+- jsonwebtoken, for enforcing authentication
 ###  Setup and Installation 
 First a new MongoDB collection need to be created and deployed. The collection's connection link string should be retrieved. This link will be used to connect the MiniBid server to the new mongoDB collection.
 
@@ -92,7 +92,7 @@ Item expiration is implemented by, on ```Item``` creation, submitting an ```Even
 
 When an ```Auction``` is created its ```current_price``` field is set to the starting price of the item being sold. When a bid is made the ```current_price``` is updated to the bid amount. ```Bids``` are validated by ensuring they are higher than the auction's ```current_price```. 
 
-The accuracy of auctions is only to the minute; The winning bid should always be a bid placed within 60 seconds of the auction expiring, but this could mean, for example, a winner being a bid placed 30 seconds after the item had expired. This constraint is due to the speed MongoDB is able to delete an expired a document in a collection and notify applications listening for a changes. MiniBid could improve this by checking if the winning bid came seconds after the item's expiration, and if so declare the previous bid the winner. However, considering the bid timestamp isn't created until after the server recieves and validates the bid, there would still always be a possible delay between a user placing a bid and the bid being acknowledged.
+The accuracy of auctions is only to the minute; The winning bid should always be a bid placed within 60 seconds of the auction expiring, but this could mean, for example, a winner being a bid placed 30 seconds after the item had expired. This constraint is due to the speed MongoDB is able to delete an expired a document in a collection and notify applications listening for a changes. MiniBid could improve this by checking if the winning bid came seconds after the item's expiration, and if so declare the previous bid the winner. However, considering the bid timestamp isn't created until after the server recieves and validates the bid, there would still always be a possible delay between a user making a bid and the bid being acknowledged.
 
 ### MiniBid RESTful API Endpoints
 Users should first register and login using the following endpoints:
