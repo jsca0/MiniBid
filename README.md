@@ -16,14 +16,14 @@ MiniBid
 ```
 ### Node.js Libraries Used
 MiniBid uses: 
-- express, for developing the server 
-- nodemon, to aid development
-- mongoose, for database communication
-- body-parser, for reading requests
-- dotenv, for reading environment variables
-- joi, for enforcing validation
-- bcryptjs, for password hashing
-- jsonwebtoken, for enforcing authentication
+- express, for developing the server. 
+- nodemon, to aid development.
+- mongoose, for database communication.
+- body-parser, for reading requests.
+- dotenv, for reading environment variables.
+- joi, for enforcing validation.
+- bcryptjs, for password hashing.
+- jsonwebtoken, for enforcing authentication.
 ###  Setup and Installation 
 First a new MongoDB collection need to be created and deployed. The collection's connection link string should be retrieved. This link will be used to connect the MiniBid server to the new mongoDB collection.
 
