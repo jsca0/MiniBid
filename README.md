@@ -15,7 +15,15 @@ MiniBid
 └─── package.json           #metadata and npm packagage list                  
 ```
 ### Node.js Libraries Used
-MiniBid uses: express nodemon mongoose body-parser dotenv joi bcryptjs jsonwebtoken
+MiniBid uses: 
+- express, 
+- nodemon
+- mongoose
+- body-parser
+- dotenv
+- joi 
+- bcryptjs 
+- jsonwebtoken
 ###  Setup and Installation 
 First a new MongoDB collection need to be created and deployed. The collection's connection link string should be retrieved. This link will be used to connect the MiniBid server to the new mongoDB collection.
 
@@ -91,7 +99,7 @@ Users should first register and login using the following endpoints:
 - /api/user
   - /register
   - /login
-  - 
+  
 
 > To register an account:
 
@@ -135,6 +143,7 @@ To read all items, post an item to sell or read an item's auction, users should 
 
 In order to bid on an item a user should send a POST requsest containing the ```Bid``` to the following endpoint (where :itemId is the ```Item:_id```):
 - /api/bid/:itemId
+  
 > Bid requests should be sent with an ```auth_token``` which authorizes any user <b>except</b> the user who created the ```Item``` (i.e. Users cannot bid on their own items). 
 
 ![bid](/images/bid.png)
