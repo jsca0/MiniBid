@@ -12,7 +12,7 @@ MiniBid
 └─── .env                   #environment variables
 └─── node_modules           #dependencies
 └─── package-lock.json      #npm automatically generated document
-└─── package.json           #metadata and npm packagage list                                           .                            compiler options
+└─── package.json           #metadata and npm packagage list                  
 ```
 ### Node.js Libraries Used
 MiniBid uses: express nodemon mongoose body-parser dotenv joi bcryptjs jsonwebtoken
