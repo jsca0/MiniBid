@@ -7,12 +7,12 @@ MiniBid
 └─── models                 #database schemas
 └─── routes                 #
 └─── validations            #validating user input
-└─── verifications          #           
+└─── verifications          #authenticating users           
 └─── app.js                 #
 └─── .env                   #environment variables
 └─── node_modules           #dependencies
 └─── package-lock.json      #npm automatically generated document
-└─── package.json           #contains metadata and npm packagages                                           .                            compiler options
+└─── package.json           #metadata and npm packagage list                                           .                            compiler options
 ```
 ### Node.js Libraries Used
 MiniBid uses: express nodemon mongoose body-parser dotenv joi bcryptjs jsonwebtoken
