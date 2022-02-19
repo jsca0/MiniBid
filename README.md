@@ -97,16 +97,16 @@ Users should first register and login using the following endpoints:
 
 ![register](/images/register.png)
 
-
+  
  
 >To login and recieve an ```auth_token```:
 
 ![login](/images/login.png)
 
 
-
+  
 <b>For every other endpoint requests must come from registered users, they should have the user's ```auth_token``` in thier headers.</b>
-
+  
 
 
 To read all items, post an item to sell or read an item's auction, users should send requests to the following API endpoints (where :itemId is the ```Item:_id```):
