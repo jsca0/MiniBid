@@ -91,14 +91,14 @@ Users should first register and login using the following endpoints:
 - /api/user
   - /register
   - /login
- 
+  - 
+  > To register an account
  ![register](/images/register.png)
- > To register an account
- 
+
  <br />
  
+  >To login and recieve an ```auth_token```
  ![login](/images/login.png)
- >To login and recieve an ```auth_token```
 <br />
 <b>For every other endpoint requests must come from registered users, they should have the user's ```auth_token``` in thier headers.</b>
 <br />
