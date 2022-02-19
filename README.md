@@ -21,6 +21,8 @@ $ npm install
   > This will start MiniBid's server.
   Now MiniBid should be running on localhost port 3000. Clients can now send requests to MiniBid's API endpoints. 
 ## Enforcing authentication/verification functionalities
+MiniBid only allows authenticated users to access the auctioning API.
+
 This is done using the ‘jsonwebtoken’ library and the oAuth v2 protocol.
 
 When a user logs in a JSON web token is created with the user’s ID and digitally signed with a ```TOKEN_SECRET```, the result  is given to the user as an ```auth_token```.
