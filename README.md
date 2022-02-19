@@ -1,7 +1,23 @@
 # MiniBid
 ## Setup, Installation and Project Structure
 ### Project Structure
-
+```
+backend
+│
+└─── dist                   #all the javascript files are here
+└─── lib                    #all the typescript files are here
+      └─── config           #app configurations files
+            └─── app.ts     #app starting point            
+      └─── controllers      #request managers
+      └─── modules          #schemas, interfaces, services
+      └─── routes           #define the endpoints
+      └─── environment.ts   #store all environment variables
+      └─── server.js        #HTTP server that listens to server port
+└─── .gitignore             #git ignore file
+└─── package-lock.json      #npm automatically generated document
+└─── package.json           #holds metadata and npm packagage list
+└─── tsconfig.json          #specify the root level files and the                                              .                            compiler options
+```
 ### Node.js Libraries Used
 MiniBid uses: express nodemon mongoose body-parser dotenv joi bcryptjs jsonwebtoken
 ###  Setup and Installation 
@@ -33,7 +49,7 @@ When the user makes an API call they include their ```auth_token``` in the reque
 
 This is how users prove they are specific, registered user’s. As unique user IDs should produce unique ```auth_tokens```.
 
-The ```auth_token``` can be decrypted using the ```TOKEN_SECRET``` , returning user’s ID if the decryption is valid. If the decryption is invalid, then access is denied.
+The ```auth_token``` taken from the request header is decrypted using the ```TOKEN_SECRET``` , returning user’s ID if the decryption is valid. If the decryption is invalid, then access is denied.
 
 Creating and verifying these tokens allows MiniBid to control who is able to access the auctioning API.
 ## Development of the MiniBid RESTful API
