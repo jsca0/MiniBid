@@ -1,8 +1,10 @@
 # MiniBid
-## Setup and Installation 
+## Setup, Installation and Project Structure
+### Project Structure
+
 ### Node.js Libraries Used
 MiniBid uses: express nodemon mongoose body-parser dotenv joi bcryptjs jsonwebtoken
-### Setup and Installation
+###  Setup and Installation 
 First a new MongoDB collection need to be created and deployed. The collection's connection link string should be retrieved. This link will be used to connect the MiniBid server to the new mongoDB collection.
 
 Next there should be a ```.env``` file in MiniBid's root directory. The ```.env``` should have  a variable ```DB_CONNECTOR``` with the MongoDB link as its value. There should also be a variable ```TOKEN_SECRET``` set to a secret value, MiniBid will use this value when authenticating user tokens.
