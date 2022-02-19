@@ -64,7 +64,6 @@ MiniBid uses five database models: ```User```, ```Item```, ```Auction```, ```Bid
 
 ![database model](/images/db_models.png)
 
-```Auctions``` and ```Bids``` have an ```itemid``` field, this behaves as a key that can be used to find an Item's Auction and it's Bids within their respective database collections.
 ### MiniBid Application Logic Overview
 MiniBid was developed to meet these goals:
 
