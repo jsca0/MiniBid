@@ -2,21 +2,17 @@
 ## Setup, Installation and Project Structure
 ### Project Structure
 ```
-backend
+MiniBid
 │
-└─── dist                   #all the javascript files are here
-└─── lib                    #all the typescript files are here
-      └─── config           #app configurations files
-            └─── app.ts     #app starting point            
-      └─── controllers      #request managers
-      └─── modules          #schemas, interfaces, services
-      └─── routes           #define the endpoints
-      └─── environment.ts   #store all environment variables
-      └─── server.js        #HTTP server that listens to server port
-└─── .gitignore             #git ignore file
+└─── models                 #database schemas
+└─── routes                 #
+└─── validations            #validating user input
+└─── verifications          #           
+└─── app.js                 #
+└─── .env                   #environment variables
+└─── node_modules           #dependencies
 └─── package-lock.json      #npm automatically generated document
-└─── package.json           #holds metadata and npm packagage list
-└─── tsconfig.json          #specify the root level files and the                                              .                            compiler options
+└─── package.json           #contains metadata and npm packagages                                           .                            compiler options
 ```
 ### Node.js Libraries Used
 MiniBid uses: express nodemon mongoose body-parser dotenv joi bcryptjs jsonwebtoken
