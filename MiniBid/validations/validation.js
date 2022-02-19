@@ -23,6 +23,8 @@ const itemDataValidation = (data) => {
         condition:joi.string().valid('new', 'used'),
         description:joi.string().required(),
         starting_price:joi.number().positive().precision(2).required(), //must be convertable to a currency
+        //TODO validate date is correctly formatted
+        //accuracy to the second?
         end_date:joi.date().iso().greater('now').required() //format??
     })
     return schemaValidation.validate(data)
