@@ -95,6 +95,7 @@ Users should first register and login using the following endpoints:
  ![register](/images/register.png)
  > To register an account
  
+ 
  ![login](/images/login.png)
  >To login and recieve an ```auth_token```
 
