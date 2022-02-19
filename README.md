@@ -3,7 +3,7 @@
 ### Node.js Libraries Used
 MiniBid uses: express nodemon mongoose body-parser dotenv joi bcryptjs jsonwebtoken
 ### Setup and Installation
-First a new MongoDB Atlas collection should be set up. It should be called 'MiniBid' the connection link should be retrieved with the link's \<password> 'myFisrtDatabase' fields changed to the users password and 'MiniBid' respectively. This link will be used to connect the MiniBid application to the new mongoDB collection.
+First a new MongoDB collection need to be created and deployed. The collection's connection link string should be retrieved. This link will be used to connect the MiniBid server to the new mongoDB collection.
 
 Next there should be a ```.env``` file in MiniBid's root directory. The ```.env``` should have  a variable ```DB_CONNECTOR``` with the MongoDB link as its value. There should also be a variable ```TOKEN_SECRET``` set to a secret value, MiniBid will use this value when authenticating user tokens.
 
@@ -21,6 +21,17 @@ $ npm install
   > This will start MiniBid's server.
   Now MiniBid should be running on localhost port 3000. Clients can now send requests to MiniBid's API endpoints. 
 ## Enforcing authentication/verification functionalities
+This is done using the ‘jsonwebtoken’ library and the oAuth v2 protocol.
+
+When a user logs in a JSON web token is created with the user’s ID and digitally signed with a ```TOKEN_SECRET```, the result  is given to the user as an ```auth_token```.
+
+When the user makes an API call they include their ```auth_token``` in the request header.
+
+This is how users prove they are specific, registered user’s. As unique user IDs should produce unique ```auth_tokens```.
+
+The ```auth_token``` can be decrypted using the ```TOKEN_SECRET``` , returning user’s ID if the decryption is valid. If the decryption is invalid, then access is denied.
+
+Creating and verifying these tokens allows MiniBid to control who is able to access the auctioning API.
 ## Development of the MiniBid RESTful API
 ### Brief Description of MiniBid’s Database Models
 MiniBid uses five database models: ```User```, ```Item```, ```Auction```, ```Bid``` and ```Event```.
