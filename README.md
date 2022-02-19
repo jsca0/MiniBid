@@ -64,13 +64,13 @@ When a user posts an item, the user input is validated. The starting price is va
 
 The user supplied end date is validated as a date time in the future. The date should have ISO 8601 format.
 
-Item expiration is implemented by, on ```Item``` creation, submitting an ```Event``` referencing both the item’s id and it’s expiration date into MiniBids ‘events’ database collection. The database is instructed to delete this ```Event``` when the expiration time is reached. MiniBid listens for deletions happening in the ‘events’ collection. When an ```Event``` is deleted MiniBid retrieves the ```Item``` the deleted event was attached to. MiniBid also retrieves the item’s ```Auction```. If the auction has any bids then the ```Item``` is marked as ‘SOLD’ and the ```Auction``` is updated with the winners user id. Otherwise the ```Item``` marked as ‘EXPIRED’.
+Item expiration is implemented by, on ```Item``` creation, submitting an ```Event``` referencing both the item’s id and it’s expiration date into MiniBids ‘events’ database collection. The database is instructed to delete this ```Event``` when the expiration time is reached. MiniBid listens for deletions happening in the ‘events’ collection. When an ```Event``` is deleted MiniBid retrieves the ```Item``` the deleted event was attached to. MiniBid also retrieves the item’s ```Auction```. If the auction has any bids then the ```Item``` is marked as ‘SOLD’ and the ```Auction``` is updated with the winner's user id. Otherwise the ```Item``` marked as ‘EXPIRED’.
 
 > 3. Authorised users should be able to bid on an item, so long as it is not their own, has not expired and their bid is higher than the items current highest bid. When the item expires the user with the highest bid wins.
 
 When an ```Auction``` is created its ```current_price``` field is set to the starting price of the item being sold. When a bid is made the ```current_price``` is updated to the bid amount. ```Bids``` are validated by ensuring they are higher than the auction's ```current_price```. 
 
-The accuracy of auctions is only to the minute; The winning bid will always be a bid placed within 60 seconds of the auction expiring, but this could mean, for example, a winner being a bid placed 30 seconds after the item had expired.
+The accuracy of auctions is only to the minute; The winning bid should always be a bid placed within 60 seconds of the auction expiring, but this could mean, for example, a winner being a bid placed 30 seconds after the item had expired.
 
 ### MiniBid RESTful API Endpoints
 Users should first register and login using the following endpoints:
